@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import { Github, Linkedin, Twitter, Mail, ArrowDown, FileText } from "lucide-react"
+import { Github, Linkedin, Mail, ArrowDown, FileText } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 const roles = [
@@ -86,7 +86,7 @@ export function HeroSection() {
             <Button
               variant="outline"
               size="icon"
-              className="rounded-full hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all"
+              className="rounded-full hover:bg-primary hover:text-primary-foreground hover:border-primary dark:hover:bg-primary dark:hover:text-primary-foreground dark:hover:border-primary transition-all"
               asChild
             >
               <a
@@ -101,7 +101,7 @@ export function HeroSection() {
             <Button
               variant="outline"
               size="icon"
-              className="rounded-full hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all"
+              className="rounded-full hover:bg-primary hover:text-primary-foreground hover:border-primary dark:hover:bg-primary dark:hover:text-primary-foreground dark:hover:border-primary transition-all"
               asChild
             >
               <a
@@ -113,28 +113,14 @@ export function HeroSection() {
                 <span className="sr-only">LinkedIn</span>
               </a>
             </Button>
+
             <Button
               variant="outline"
               size="icon"
-              className="rounded-full hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all"
+              className="rounded-full hover:bg-primary hover:text-primary-foreground hover:border-primary dark:hover:bg-primary dark:hover:text-primary-foreground dark:hover:border-primary transition-all"
               asChild
             >
-              <a
-                href="https://twitter.com"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Twitter className="h-5 w-5" />
-                <span className="sr-only">Twitter</span>
-              </a>
-            </Button>
-            <Button
-              variant="outline"
-              size="icon"
-              className="rounded-full hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all"
-              asChild
-            >
-              <a href="mailto:adityaprajapati6354@gmail.com">
+              <a href="https://mail.google.com/mail/?view=cm&fs=1&to=adityaprajapati6354@gmail.com" target="_blank" rel="noopener noreferrer">
                 <Mail className="h-5 w-5" />
                 <span className="sr-only">Email</span>
               </a>
@@ -149,18 +135,18 @@ export function HeroSection() {
             <Button
               variant="outline"
               size="lg"
-              className="rounded-full px-8 hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all"
+              className="rounded-full px-8 hover:bg-primary hover:text-primary-foreground hover:border-primary dark:hover:bg-primary dark:hover:text-primary-foreground dark:hover:border-primary transition-all"
               asChild
             >
-              <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
+              <a href="/resume.pdf" download="Aditya Prajapati Resume.pdf">
                 <FileText className="mr-2 h-5 w-5" />
-                Resume
+                Download Resume
               </a>
             </Button>
             <Button
               variant="outline"
               size="lg"
-              className="rounded-full px-8 hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all"
+              className="rounded-full px-8 hover:bg-primary hover:text-primary-foreground hover:border-primary dark:hover:bg-primary dark:hover:text-primary-foreground dark:hover:border-primary transition-all"
               asChild
             >
               <a href="#contact">Get in Touch</a>

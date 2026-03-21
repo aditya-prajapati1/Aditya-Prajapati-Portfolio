@@ -6,58 +6,22 @@ import { Button } from "@/components/ui/button"
 
 const projects = [
   {
-    title: "E-Commerce Platform",
+    title: "Netflix Clone",
     description:
-      "A full-featured e-commerce platform with cart functionality, payment integration, and admin dashboard. Built with modern tech stack for optimal performance.",
-    technologies: ["Next.js", "TypeScript", "Stripe", "Prisma", "PostgreSQL"],
-    github: "https://github.com",
-    demo: "https://example.com",
-    featured: true,
-  },
-  {
-    title: "Task Management App",
-    description:
-      "A collaborative task management application with real-time updates, drag-and-drop interface, and team collaboration features.",
-    technologies: ["React", "Node.js", "Socket.io", "MongoDB", "Tailwind CSS"],
-    github: "https://github.com",
-    demo: "https://example.com",
-    featured: true,
-  },
-  {
-    title: "AI Content Generator",
-    description:
-      "An AI-powered content generation tool that helps create blog posts, social media content, and marketing copy using GPT APIs.",
-    technologies: ["Next.js", "OpenAI API", "Vercel AI SDK", "Supabase"],
-    github: "https://github.com",
-    demo: "https://example.com",
-    featured: true,
-  },
-  {
-    title: "Real-time Chat Application",
-    description:
-      "A modern chat application with real-time messaging, file sharing, and video call capabilities.",
-    technologies: ["React", "WebRTC", "Socket.io", "Express", "Redis"],
-    github: "https://github.com",
+      "Built a responsive frontend application replicating Netflix UI. Implemented reusable components and dynamic content rendering. Followed component-based architecture for scalable UI development.",
+    technologies: ["React", "JavaScript", "HTML", "CSS"],
+    github: "https://github.com/aditya-prajapati1",
     demo: null,
-    featured: false,
+    featured: true,
   },
   {
-    title: "Portfolio Template",
+    title: "Travel Website",
     description:
-      "A customizable portfolio template for developers with dark mode, animations, and responsive design.",
-    technologies: ["Next.js", "Tailwind CSS", "Framer Motion"],
-    github: "https://github.com",
-    demo: "https://example.com",
-    featured: false,
-  },
-  {
-    title: "Weather Dashboard",
-    description:
-      "A weather dashboard with location-based forecasts, interactive maps, and historical data visualization.",
-    technologies: ["React", "Chart.js", "OpenWeather API", "Mapbox"],
-    github: "https://github.com",
-    demo: "https://example.com",
-    featured: false,
+      "Developed a fully responsive travel and tour booking website. Designed and implemented dynamic UI components to showcase tour packages. Applied responsive web design principles to ensure cross-browser and mobile compatibility.",
+    technologies: ["HTML5", "CSS3", "JavaScript"],
+    github: "https://github.com/aditya-prajapati1",
+    demo: null,
+    featured: true,
   },
 ]
 
@@ -145,7 +109,7 @@ export function ProjectsSection() {
         <div className="text-center mt-12">
           <Button variant="outline" size="lg" className="rounded-full" asChild>
             <a
-              href="https://github.com"
+              href="https://github.com/aditya-prajapati1"
               target="_blank"
               rel="noopener noreferrer"
             >

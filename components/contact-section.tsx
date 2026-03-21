@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { Mail, MapPin, Send, Loader2 } from "lucide-react"
+import { Mail, MapPin, Send, Loader2, Github, Linkedin } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -16,11 +16,34 @@ export function ContactSection() {
     e.preventDefault()
     setIsSubmitting(true)
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1500))
+    const form = e.currentTarget
+    const formData = new FormData(form)
+    // Add your Web3Forms access key
+    formData.append("access_key", "a585998e-868d-48dd-9c02-d3b344574aaf")
 
-    setIsSubmitting(false)
-    setSubmitted(true)
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+      })
+
+      const data = await response.json()
+
+      if (data.success) {
+        setSubmitted(true)
+        form.reset()
+        // Reset the success message after 5 seconds to show the form again
+        setTimeout(() => {
+          setSubmitted(false)
+        }, 5000)
+      } else {
+        console.error("Form submission failed:", data.message)
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error)
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -50,7 +73,9 @@ export function ContactSection() {
                   <div>
                     <h3 className="font-semibold text-foreground mb-1">Email</h3>
                     <a
-                      href="mailto:hello@adityaprajapati.dev"
+                      href="https://mail.google.com/mail/?view=cm&fs=1&to=adityaprajapati6354@gmail.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="text-sm text-muted-foreground hover:text-primary transition-colors"
                     >
                       adityaprajapati6354@gmail.com
@@ -77,6 +102,39 @@ export function ContactSection() {
                 </div>
               </CardContent>
             </Card>
+
+            <div className="flex items-center gap-4 pt-2">
+              <Button
+                variant="outline"
+                size="icon"
+                className="rounded-full text-muted-foreground hover:text-primary hover:border-primary hover:bg-primary/10 transition-all"
+                asChild
+              >
+                <a
+                  href="https://github.com/aditya-prajapati1"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Github className="h-5 w-5" />
+                  <span className="sr-only">GitHub</span>
+                </a>
+              </Button>
+              <Button
+                variant="outline"
+                size="icon"
+                className="rounded-full text-muted-foreground hover:text-primary hover:border-primary hover:bg-primary/10 transition-all"
+                asChild
+              >
+                <a
+                  href="https://linkedin.com/in/aditya-prajapati-ap2006"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Linkedin className="h-5 w-5" />
+                  <span className="sr-only">LinkedIn</span>
+                </a>
+              </Button>
+            </div>
           </div>
 
           {/* Contact Form */}
@@ -115,6 +173,16 @@ export function ContactSection() {
                         type="email"
                         placeholder="your@email.com"
                         required
+                        className="bg-background"
+                      />
+                    </Field>
+                    <Field>
+                      <FieldLabel htmlFor="phone">Phone Number</FieldLabel>
+                      <Input
+                        id="phone"
+                        name="phone"
+                        type="tel"
+                        placeholder="Your phone number"
                         className="bg-background"
                       />
                     </Field>

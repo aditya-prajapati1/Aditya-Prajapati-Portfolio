@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button"
 const navLinks = [
   { name: "Home", href: "#home" },
   { name: "About", href: "#about" },
-  { name: "Experience", href: "#experience" },
+  { name: "Education", href: "#education" },
   { name: "Projects", href: "#projects" },
   { name: "Contact", href: "#contact" },
   { name: "Resume", href: "/resume.pdf", isExternal: true },
@@ -71,7 +71,7 @@ export function Navbar() {
                 className={`text-sm font-medium transition-colors hover:text-primary flex items-center gap-1 ${
                   !link.isExternal && activeSection === link.href.slice(1)
                     ? "text-primary"
-                    : "text-muted-foreground"
+                    : "text-foreground"
                 }`}
               >
                 {link.isExternal && <FileText className="h-4 w-4" />}
@@ -134,7 +134,7 @@ export function Navbar() {
                   className={`text-sm font-medium transition-colors hover:text-primary flex items-center gap-1 ${
                     !link.isExternal && activeSection === link.href.slice(1)
                       ? "text-primary"
-                      : "text-muted-foreground"
+                      : "text-foreground"
                   }`}
                 >
                   {link.isExternal && <FileText className="h-4 w-4" />}
