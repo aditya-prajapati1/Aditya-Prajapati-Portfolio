@@ -49,9 +49,11 @@ export function Navbar() {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-background/80 backdrop-blur-lg border-b border-border shadow-sm"
-          : "bg-transparent"
+        isOpen
+          ? "bg-background border-b border-border shadow-lg"
+          : scrolled
+            ? "bg-background/80 backdrop-blur-lg border-b border-border shadow-sm"
+            : "bg-transparent"
       }`}
     >
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
@@ -122,8 +124,8 @@ export function Navbar() {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="md:hidden py-4 border-t border-border">
-            <div className="flex flex-col gap-4">
+          <div className="md:hidden border-t border-border bg-background pb-4 pt-2 shadow-xl">
+            <div className="flex flex-col px-2 gap-1">
               {navLinks.map((link) => (
                 <a
                   key={link.name}
@@ -131,13 +133,13 @@ export function Navbar() {
                   target={link.isExternal ? "_blank" : undefined}
                   rel={link.isExternal ? "noopener noreferrer" : undefined}
                   onClick={() => setIsOpen(false)}
-                  className={`text-sm font-medium transition-colors hover:text-primary flex items-center gap-1 ${
+                  className={`text-base font-medium px-4 py-3 rounded-lg transition-colors flex items-center gap-3 ${
                     !link.isExternal && activeSection === link.href.slice(1)
-                      ? "text-primary"
-                      : "text-foreground"
+                      ? "bg-secondary text-secondary-foreground"
+                      : "text-muted-foreground hover:bg-secondary/50 hover:text-foreground"
                   }`}
                 >
-                  {link.isExternal && <FileText className="h-4 w-4" />}
+                  {link.isExternal && <FileText className="h-5 w-5" />}
                   {link.name}
                 </a>
               ))}
